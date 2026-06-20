@@ -12,7 +12,15 @@ app.post("/login", (req, res) => {
     console.log(username, password);
 
     res.json({
-        success: true
+        success: true,
+    });
+});
+
+app.get("/health", (req, res) => {
+    res.json({
+        success: true,
+        uptime: process.uptime(),
+        timestamp: Date.now(),
     });
 });
 
